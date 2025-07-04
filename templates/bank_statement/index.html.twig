@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<h1>{{ messages.h1 }}</h1>
+
+	{% if data is empty %}
+		<p>{{ messages.description }}</p>
+		<p>{{ messages.test_description|trans({'%app_test_data%': path('app_test_data')})|raw }}</p>
+
+		{{ form(form) }}
+	{% endif %}
+
+	{% if data is not empty %}
+		<h2>{{ messages.h2 }}</h2>
+		<a href="{{ path('app_bank_statement') }}">{{ messages.new_file }}</a>
+
+		{% if statistics is not empty %}
+			<h3>{{ messages.h3 }}</h3>
+
+			<h4>{{ messages.top_highest_payments }}</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>{{ messages.date }}</th>
+						<th>{{ messages.type }}</th>
+						<th>{{ messages.recipient }}</th>
+						<th>{{ messages.purpose }}</th>
+						<th>{{ messages.amount }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for payment in statistics.top_payments %}
+						<tr>
+							<td>{{ payment.date }}</td>
+							<td>{{ payment.type }}</td>
+							<td>{{ payment.recipient }}</td>
+							<td>{{ payment.purpose }}</td>
+							<td>{{ payment.amount }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<hr>
+
+			<h4>{{ messages.top_frequent_recipients }}</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>{{ messages.recipient }}</th>
+						<th>{{ messages.transactions }}</th>
+						<th>{{ messages.total_amount }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for recipient in statistics.top_recipients %}
+						<tr>
+							<td>{{ recipient.name }}</td>
+							<td>{{ recipient.count }}</td>
+							<td>{{ recipient.amount }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<h4>{{ messages.most_frequent_transaction_type }}</h4>
+			<p>{{ statistics.most_frequent_type }}</p>
+		{% endif %}
+		
+		<h4>{{ messages.all_transactions }}</h4>
+
+		<table>
+			<thead>
+				<tr>
+					{% for header in headers %}
+						<th>{{ header }}</th>
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in data %}
+					<tr>
+						<td>{{ row.date }}</td>
+						<td>{{ row.type }}</td>
+						<td>{{ row.purpose }}</td>
+						<td>{{ row.recipient }}</td>
+						<td>{{ row.amount }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+
+{% endblock %}

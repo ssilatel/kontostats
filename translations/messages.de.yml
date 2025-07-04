@@ -1,0 +1,17 @@
+h1: Kontoauszugs-Analyse
+description: Laden Sie einen Kontoauszug im CSV-Format hcoh, um diesen zu analysieren. Keine Daten werden auf dem Server gespeichert, und alles, was Sie hochladen, wird gelöscht, sobald Sie die Website schließen oder aktualisieren.
+test_description: Wenn Sie keine Datei hochladen möchten, können Sie <a href=%app_test_data%>hier klicken</a>, um <strong>Testdaten</strong> zu verwenden und zu sehen, wie die Website funktioniert.
+h2: Kontoauszugsdaten
+new_file: Neue Datei auswählen
+h3: Statistiken
+top_highest_payments: Höchste Zahlungen
+date: Datum
+type: Buchungstext
+recipient: Empfänger
+purpose: Verwendungszweck
+amount: Betrag
+transactions: Transaktionen
+total_amount: Gesamtbetrag
+top_frequent_recipients: Häufigste Empfänger
+most_frequent_transaction_type: Häufigste Transaktionstypen
+all_transactions: Alle Transaktionen

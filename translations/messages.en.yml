@@ -1,0 +1,17 @@
+h1: Bank Statement Analyzer
+description: Upload a CSV file from your bank to analyze. No data is saved server site and everything you upload will be deleted when you close or refresh the website.
+test_description: If you don't want to upload a file you can <a href=%app_test_data%>click here</a> to use <strong>test data</strong> to see how the website works.
+h2: Bank Statement Data
+new_file: Choose a new file
+h3: Statistics
+top_highest_payments: Top Highest Payments
+date: Date
+type: Type
+recipient: Recipient
+purpose: Purpose
+amount: Amount
+transactions: Transactions
+total_amount: Total Amount
+top_frequent_recipients: Top Frequent Recipients
+most_frequent_transaction_type: Most Frequent Transaction Type
+all_transactions: All Transactions

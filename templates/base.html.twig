@@ -2,16 +2,38 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}KontoStats{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+		<style>
+			@media (prefers-color-scheme: dark) {
+			  :root {
+				color-scheme: light;
+				--bg: #fff;
+				--accent-bg: #f5f7ff;
+				--text: #212121;
+				--text-light: #585858;
+				--accent: #0d47a1;
+				--accent-hover: #1266e2;
+				--accent-text: var(--bg);
+				--code: #d81b60;
+				--preformatted: #444;
+				--marked: #ffdd33;
+				--disabled: #efefef;
+			  }
+			}
+		</style>
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
+		<div>
+			<a href="{{ path('app_language_switch', {'locale': 'en'}) }}">&#x1F1EC;&#x1F1E7; EN</a>
+			<a href="{{ path('app_language_switch', {'locale': 'de'}) }}">&#x1F1E9;&#x1F1EA; DE</a>
+		</div>
         {% block body %}{% endblock %}
     </body>
 </html>
