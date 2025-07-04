@@ -2,7 +2,7 @@
 
 ## English (German version below)
 
-This repository contains the website code of KontoStats, which is a tool built with Symfony 7.
+This repository contains the website code of [KontoStats](https://kontostats.lepuri.net), which is a tool built with Symfony 7.
 
 The goal of the website is to allow users to upload their bank statements and analyze them.
 
@@ -15,7 +15,7 @@ The goal of the website is to allow users to upload their bank statements and an
 
 ## Deutsch
 
-Dieses Repository enthält den Website-Code von KontoStats, einem Tool, das mit Symfony 7 entwickelt wurde.
+Dieses Repository enthält den Website-Code von [KontoStats](https://kontostats.lepuri.net), einem Tool, das mit Symfony 7 entwickelt wurde.
 
 Ziel der Website ist es, Nutzern die Möglichkeit zu geben, ihre Kontoauszüge hochzuladen und auszuwerten.
 
